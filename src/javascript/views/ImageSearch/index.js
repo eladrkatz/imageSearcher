@@ -5,6 +5,7 @@ import { Paper, TextField, RaisedButton } from 'material-ui';
 import ActionAccountCicle
 from 'material-ui/lib/svg-icons/action/account-circle';
 import * as AuthActions from '../../redux/modules/auth';
+import ImageResult from './Result';
 
 class ImageSearch extends Component {
   static propTypes = {
@@ -41,12 +42,27 @@ class ImageSearch extends Component {
   render() {
     const styles = this.getStyles();
 
+    let imageResults = [];
+
+    for (let i=0; i<3; i++) {
+      imageResults.push({imageName: "imageName" + i, index : i});
+    }
+
     return (
         <div>
             <input type='text' />
-            <button >Search Images</button>
+            <button onClick={::this.doSearch} >Search Images</button>
+
+          {imageResults.map((result, i) =>
+            <ImageResult result={result} />
+          )}
         </div>
     );
+  }
+
+  doSearch() {
+    console.log('hi!');
+    alert('yo!');
   }
 
   submit(event) {
