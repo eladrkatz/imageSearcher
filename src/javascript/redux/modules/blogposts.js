@@ -69,6 +69,7 @@ export default function reducer(state = initialState, action = {}) {
 
 export function fetchPosts(start = 0, limit = 10) {
   return async (dispatch) => {
+    debugger;
     dispatch({
       type: [FETCH_POSTS, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE],
       meta: {

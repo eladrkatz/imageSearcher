@@ -29,6 +29,7 @@ export default class Root extends Component {
               <Route path='/imageSearch' component={ImageSearch}/>
             </Router>
           </Provider>
+          <DevTools store={store} />
         </div>
     );
 //          <DevTools store={store} />

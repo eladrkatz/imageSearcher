@@ -61,7 +61,6 @@ class ImageSearch extends Component {
   }
 
   doSearch() {
-    console.log('hi!');
     alert('yo!');
   }
 
