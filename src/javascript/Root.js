@@ -11,6 +11,7 @@ import DevTools from './containers/DevTools';
 import Blog from './views/Blog';
 import Draft from './views/Draft';
 import Login from './views/Login';
+import ImageSearch from './views/ImageSearch';
 
 hooks.bootstrap(store)();
 
@@ -25,10 +26,12 @@ export default class Root extends Component {
               <Route path='/post/:id/edit' component={Draft} onEnter={hooks.editPost(store)}/>
               <Route path='/post/new' component={Draft}/>
               <Route path='/login' component={Login}/>
+              <Route path='/imageSearch' component={ImageSearch}/>
             </Router>
           </Provider>
-          <DevTools store={store} />
         </div>
     );
+//          <DevTools store={store} />
+//        </div>
   }
 };

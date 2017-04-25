@@ -13,14 +13,6 @@
     "test:cov": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --recursive"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/knowbody/redux-react-router-example-app/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/knowbody/redux-react-router-example-app.git"
-  },
-  "homepage": "https://github.com/knowbody/redux-react-router-example-app",
   "dependencies": {
     "classnames": "^2.2.0",
     "express": "^4.13.3",

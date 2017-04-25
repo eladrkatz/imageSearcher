@@ -1,0 +1,65 @@
+import React, { PropTypes, Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Paper, TextField, RaisedButton } from 'material-ui';
+import ActionAccountCicle
+from 'material-ui/lib/svg-icons/action/account-circle';
+import * as AuthActions from '../../redux/modules/auth';
+
+class ImageSearch extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired
+  }
+
+  static contextTypes = {
+    muiTheme: PropTypes.object.isRequired
+  }
+
+  getStyles() {
+    return {
+      center: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%',
+        padding: 10
+      },
+      paper: {
+        maxHeight: 400,
+        maxWidth: 400,
+        textAlign: 'center',
+        padding: '20px 40px'
+      },
+      submit: {
+        marginTop: 10,
+        marginBottom: 20,
+        width: '100%'
+      }
+    };
+  }
+
+  render() {
+    const styles = this.getStyles();
+
+    return (
+        <div>
+            <input type='text' />
+            <button >Search Images</button>
+        </div>
+    );
+  }
+
+  submit(event) {
+    const { dispatch } = this.props;
+    const actions = bindActionCreators(AuthActions, dispatch);
+
+    const identity = this.refs.identity.state.hasValue;
+    const password = this.refs.password.state.hasValue;
+
+    if (event.type === 'keydown' && event.keyCode !== 13) return;
+
+    actions.login(identity, password);
+  }
+}
+
+export default connect(state => ({}))(ImageSearch);
